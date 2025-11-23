@@ -15,3 +15,18 @@ jobs:
 
             - name: Install Dependencies
               run: npm install
+
+              #- name: Run tests
+              #  run: npm test
+
+            - name: Build React App
+              run: npm run build
+
+            # Upload Build Artifacts
+            - name: Upload Build Artifacts
+              uses: actions/upload-artifact@v4
+              with:
+                name: react-build
+                path: dist
+
+                
